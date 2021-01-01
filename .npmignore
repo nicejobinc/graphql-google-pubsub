@@ -3,3 +3,5 @@ node_modules
 .idea
 .babelrc
 .DS_Store
+.npmrc
+*.log
