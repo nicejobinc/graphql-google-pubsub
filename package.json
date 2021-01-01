@@ -27,19 +27,19 @@
     }
   ],
   "scripts": {
-    "prepublishOnly": "GCP_PUBSUB_INTEGRATION_TEST_TOPIC=TEST_TOPIC npm run test",
+    "prepublishOnly": "GCP_PUBSUB_INTEGRATION_TEST_TOPIC=TEST_TOPIC yarn run test",
     "compile": "tsc",
-    "pretest": "npm run compile",
-    "test": "npm run testonly -- && npm run integration --",
-    "posttest": "npm run lint",
+    "pretest": "yarn run compile",
+    "test": "yarn run testonly && yarn run integration",
+    "posttest": "yarn run lint",
     "lint": "tslint --project ./tsconfig.json ./src/*.ts",
     "watch": "tsc -w",
     "testonly": "mocha --reporter spec --full-trace ./dist/test/tests.js ",
-    "preintegration": "npm run compile",
+    "preintegration": "yarn run compile",
     "integration": "mocha --reporter spec --full-trace ./dist/test/integration-tests.js"
   },
   "dependencies": {
-    "@google-cloud/pubsub": "^1.1.2",
+    "@google-cloud/pubsub": "^2.7.0",
     "graphql-subscriptions": "^1.1.0",
     "iterall": "^1.2.2"
   },
