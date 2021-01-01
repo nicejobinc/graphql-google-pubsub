@@ -36,7 +36,10 @@
     "watch": "tsc -w",
     "testonly": "mocha --reporter spec --full-trace ./dist/test/tests.js ",
     "preintegration": "yarn run compile",
-    "integration": "mocha --reporter spec --full-trace ./dist/test/integration-tests.js"
+    "integration": "mocha --reporter spec --full-trace ./dist/test/integration-tests.js",
+    "patch-publish": "yarn compile && yarn prepublishOnly && yarn publish --patch && git push",
+    "minor-publish": "yarn compile && yarn prepublishOnly && yarn publish --minor && git push",
+    "major-publish": "yarn compile && yarn prepublishOnly && yarn publish --major && git push"
   },
   "dependencies": {
     "@google-cloud/pubsub": "^2.7.0",
