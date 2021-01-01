@@ -67,7 +67,7 @@ describe('PubSubAsyncIterator', function() {
       })
       .then(res => {
         expect(res.value.data.testSubscription).to.equal('FIRST_EVENT');
-      })).timeout(6000);
+      })).timeout(10000);
 
   it('should clear event handlers', () =>
     results
