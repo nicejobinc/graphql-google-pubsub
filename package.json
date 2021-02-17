@@ -42,7 +42,7 @@
     "major-publish": "yarn compile && yarn prepublishOnly && yarn publish --major && git push"
   },
   "dependencies": {
-    "@google-cloud/pubsub": "^2.7.0",
+    "@google-cloud/pubsub": "^2.9.0",
     "graphql-subscriptions": "^1.1.0",
     "iterall": "^1.2.2"
   },
